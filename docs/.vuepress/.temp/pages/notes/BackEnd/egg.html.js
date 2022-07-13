@@ -1,0 +1,14 @@
+export const data = JSON.parse("{\"key\":\"v-e90d85d4\",\"path\":\"/notes/BackEnd/egg.html\",\"title\":\"Egg.js\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"Egg.js\",\"date\":\"2022-03-18T00:00:00.000Z\",\"sidebar\":false,\"tag\":[\"Node\",\"Koa\",\"Egg\"],\"category\":[\"服务端\",\"笔记\"],\"summary\":\"提示\\nEgg.js为企业级框架和应用而生的Node.js框架，Egg（简写）奉行【约定优于配置】的框架，按照一套同意的约定进行应用开发。\\n\\n\",\"head\":[[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-v2-demo.mrhope.site/notes/BackEnd/egg.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"主题演示\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Egg.js\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"zh-CN\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Node\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Koa\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Egg\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2022-03-18T00:00:00.000Z\"}]]},\"excerpt\":\"<div class=\\\"custom-container tip\\\"><p class=\\\"custom-container-title\\\">提示</p>\\n<p>Egg.js为企业级框架和应用而生的Node.js框架，Egg（简写）奉行【约定优于配置】的框架，按照一套同意的约定进行应用开发。</p>\\n</div>\\n\",\"headers\":[{\"level\":2,\"title\":\"一、 Egg.js项目创建与项目结构\",\"slug\":\"一、-egg-js项目创建与项目结构\",\"children\":[{\"level\":3,\"title\":\"1.1 安装\",\"slug\":\"_1-1-安装\",\"children\":[]},{\"level\":3,\"title\":\"1.2 项目目录\",\"slug\":\"_1-2-项目目录\",\"children\":[]},{\"level\":3,\"title\":\"1.3 Egg.js的Controller的使用\",\"slug\":\"_1-3-egg-js的controller的使用\",\"children\":[]}]},{\"level\":2,\"title\":\"二、请求与传参\",\"slug\":\"二、请求与传参\",\"children\":[{\"level\":3,\"title\":\"2.1 路由params传参\",\"slug\":\"_2-1-路由params传参\",\"children\":[]},{\"level\":3,\"title\":\"2.2 query的形式传参\",\"slug\":\"_2-2-query的形式传参\",\"children\":[]},{\"level\":3,\"title\":\"2.3 返回状态码设置\",\"slug\":\"_2-3-返回状态码设置\",\"children\":[]},{\"level\":3,\"title\":\"2.4 post请求\",\"slug\":\"_2-4-post请求\",\"children\":[]},{\"level\":3,\"title\":\"2.5 编写Service服务\",\"slug\":\"_2-5-编写service服务\",\"children\":[]}]},{\"level\":2,\"title\":\"三、Cookie与Session\",\"slug\":\"三、cookie与session\",\"children\":[]},{\"level\":2,\"title\":\"四、 Egg.js的中间件\",\"slug\":\"四、-egg-js的中间件\",\"children\":[]},{\"level\":2,\"title\":\"五、 Egg.js的Extend\",\"slug\":\"五、-egg-js的extend\",\"children\":[]},{\"level\":2,\"title\":\"六、 Egg.js的定时任务\",\"slug\":\"六、-egg-js的定时任务\",\"children\":[]},{\"level\":2,\"title\":\"七、Mysql查询\",\"slug\":\"七、mysql查询\",\"children\":[]}],\"readingTime\":{\"minutes\":2.63,\"words\":788},\"filePathRelative\":\"notes/BackEnd/egg.md\",\"localizedDate\":\"2022年3月18日\"}")
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
