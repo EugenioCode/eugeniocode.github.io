@@ -4,12 +4,27 @@ export default sidebar([
   "/",
   // "/home",
   // "/slide",
+  // {
+  //   text: "工具",
+  //   icon: "creative",
+  //   prefix: "/tools/",
+  //   // link: "/guide/",
+  //   children: ['git.md', 'npm.md', 'mac.md'],
+  // },
   {
-    text: "工具",
-    icon: "creative",
-    prefix: "/tools/",
-    // link: "/guide/",
-    children: ['git.md', 'npm.md', 'mac.md'],
+    text: "Git",
+    icon: "code-fork",
+    link: "/tools/git.md",
+  },
+  {
+    text: "NPM",
+    icon: "npm",
+    link: "/tools/npm.md",
+  },
+  {
+    text: "Mac",
+    icon: "apple-core",
+    link: "/tools/mac.md",
   },
   // {
   //   text: "笔记",

@@ -1,4 +1,4 @@
-import { useStyleTag } from "/Users/jianjun.yang/Documents/blog_v2/node_modules/vuepress-plugin-components/lib/client/composables";
+import { useScriptTag } from "/Users/jianjun.yang/Documents/blog_v2/node_modules/vuepress-plugin-components/lib/client/composables";
 import { h } from "vue";
 import { defineClientConfig } from "@vuepress/client";
 import Badge from "/Users/jianjun.yang/Documents/blog_v2/node_modules/vuepress-plugin-components/lib/client/components/Badge";
@@ -13,7 +13,7 @@ export default defineClientConfig({
     
   },
   setup: () => {
-    useStyleTag(`@import url("//at.alicdn.com/t/font_2410206_a0xb9hku9iu.css");`, { id: "icon-assets" });
+    useScriptTag(`https://kit.fontawesome.com/ca37c296c5.js`);
     
   },
   rootComponents: [
