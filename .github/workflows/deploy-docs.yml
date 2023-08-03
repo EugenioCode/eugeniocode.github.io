@@ -23,17 +23,17 @@ jobs:
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: yarn
+          node-version: 18
+          cache: npm
 
       - name: 安装依赖
-        run: yarn install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: |-
-          yarn run docs:build
+          npm run docs:build
           > docs/.vuepress/dist/.nojekyll
 
       - name: 部署文档
