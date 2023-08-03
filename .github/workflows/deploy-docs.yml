@@ -17,13 +17,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
+          
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
           node-version: 14
           cache: npm
-          persist-credentials: false
 
       # 生成静态文件
-      - name: Build
-        run: npm install --frozen-lockfile && npm run build
+      - name: 安装依赖
+        run: npm install --frozen-lockfile
+
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: |-
+          npm run build
 
       # 部署到 GitHub Pages
       - name: Deploy
