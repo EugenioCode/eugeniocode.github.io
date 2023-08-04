@@ -1,5 +1,5 @@
 import { getThemeConfig, defineConfig } from '@sugarat/theme/node'
-
+import { SearchPlugin } from 'vitepress-plugin-search'
 // 主题独有配置
 // 详见文档: https://theme.sugarat.top/
 const blogTheme = getThemeConfig({
@@ -61,6 +61,7 @@ export default defineConfig({
   title: '星が隠れ',
   description: '生活的琐碎',
   vite: {
+    plugins: [SearchPlugin()],
     optimizeDeps: {
       include: ['element-plus'],
       exclude: ['@sugarat/theme']
