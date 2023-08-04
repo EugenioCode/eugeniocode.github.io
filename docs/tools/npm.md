@@ -1,8 +1,10 @@
 ---
 title: NPM
 date: 2022-03-21
+sidebar: false
+outline: [2, 3]
 tag:
- - Npm
+ - NPM
  - Node
 category:
  - 工具
@@ -53,7 +55,7 @@ nrm test [<name>]
 
 ![测试npm源速度](https://raw.githubusercontent.com/EugenioCode/picBed/main/20220321230122.png)
 
-## 2. 切换`node`版本的工具 —— `n`
+## 2. ~~（弃用）切换`node`版本的工具 —— `n`~~
 
 ### 2.1 安装 `n`
 
@@ -79,4 +81,52 @@ n 16.15.1
 // 删除指定版本
 sudo n rm 16.15.1
 ```
+## 3. 切换`node`版本的工具 —— `fnm`
+
+### 3.1 安装 `fnm`
+```shell
+brew install fnm
+```
+
+### 3.2 配置 `fnm` 所需的环境变量到 `bash` 或 `zsh` 配置文件中，以 `zsh`为例
+```shell
+fnm env --use-on-cd >> ~/.zshrc
+```
+
+### 3.3 用 `fnm` 安装 Node
+```shell
+# 安装 LTS 版本
+fnm install --lts
+
+# 安装指定大版本的最新版本
+fnm install 18
+
+# 安装指定版本
+fnm install 18.21.1
+```
+### 3.4 通过 `fnm` 来指定 Node 版本
+```shell
+# 使用系统版本
+fnm use system
+
+# 使用 fnm 所安装，且版本号为 18.21.1 的 Node 程序
+fnm use 18.21.1
+
+# 使用 fnm 所安装，且主版本号为 18 的最新版本的 Node 程序
+fnm use 18
+
+# 指定默认版本
+fnm default 18.21.1
+```
+
+### 3.5 卸载`fnm`
+```shell
+brew uninstall fnm
+
+# 移除 ~/.fnm 目录
+rm -rf ~/.fnm
+
+# 移除 .bash 或 .zsh 的配置文件中与 fnm 相关的配置
+```
+
 

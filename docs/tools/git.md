@@ -1,6 +1,9 @@
 ---
 title: GIT
 date: 2022-03-16
+sidebar: false
+outline: [2, 3]
+sticky: 1
 tag:
  - Git
 category:

@@ -1,6 +1,9 @@
 ---
 title: Mac软件推荐
 date: 2022-04-05
+sidebar: false
+outline: [2, 3]
+sticky: 2
 tag:
  - Mac
 category:
