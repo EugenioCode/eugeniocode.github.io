@@ -73,7 +73,7 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License.',
       copyright:
-        'Copyright © 2023 | <a target="_blank" href="https://theme.sugarat.top/"> 星が隠れ </a>'
+        'Copyright © 2023 | <a target="_blank" href="https://github.com/EugenioCode/Eugeniocode"> 星が隠れ </a>'
     },
     logo: '/logo.png',
     // editLink: {
