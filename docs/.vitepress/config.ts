@@ -5,6 +5,9 @@ import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 const blogTheme = getThemeConfig({
   // 文章默认作者
   author: '星が隠れ',
+  article: {
+    readingTime: false
+  },
   // 友链
   friend: [
     {
@@ -14,6 +17,12 @@ const blogTheme = getThemeConfig({
         'https://nanjingcaiyong.github.io/logo.png',
       url: 'https://nanjingcaiyong.github.io/'
     },
+    {
+      nickname: '茂茂物语',
+      des: '知识是进步的阶梯，争取每天都有知识点更新',
+      avatar: 'https://notes.fe-mm.com/logo.png',
+      url: 'https://notes.fe-mm.com/nav'
+    }
     // {
     //   nickname: 'Vitepress',
     //   des: 'Vite & Vue Powered Static Site Generator',
@@ -84,11 +93,22 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '大前端', items: [
-          { text: 'Html', link: '/FrontEnd/html' },
+        text: '前端物语', items: [
+          {text: '', items: [
+            { text: 'Html', link: '/FrontEnd/html' },
           { text: 'Typescript', link: '/FrontEnd/typescript' },
           { text: 'Vue', link: '/FrontEnd/vue' },
-          { text: 'Mysql入门', link: '/FrontEnd/mysql' },
+          ]},
+          {
+            text: '',
+            items: [
+              { text: 'Mysql入门', link: '/FrontEnd/mysql' },
+            ]
+          },
+         {text: '', items: [
+          { text: '代码片段', link: '/FrontEnd/codeSnippet' },
+         ]},
+          {text: '浏览器相关知识', link: '/FrontEnd/browser'}
         ]
       },
       {
