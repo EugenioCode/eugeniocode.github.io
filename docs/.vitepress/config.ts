@@ -94,21 +94,25 @@ export default defineConfig({
       { text: '首页', link: '/' },
       {
         text: '前端物语', items: [
-          {text: '', items: [
-            { text: 'Html', link: '/FrontEnd/html' },
-          { text: 'Typescript', link: '/FrontEnd/typescript' },
-          { text: 'Vue', link: '/FrontEnd/vue' },
-          ]},
+          {
+            text: '', items: [
+              { text: 'Html', link: '/FrontEnd/html' },
+              { text: 'Typescript', link: '/FrontEnd/typescript' },
+              { text: 'Vue', link: '/FrontEnd/vue' },
+            ]
+          },
           {
             text: '',
             items: [
               { text: 'Mysql入门', link: '/FrontEnd/mysql' },
             ]
           },
-         {text: '', items: [
-          { text: '代码片段', link: '/FrontEnd/codeSnippet' },
-         ]},
-          {text: '浏览器相关知识', link: '/FrontEnd/browser'}
+          {
+            text: '', items: [
+              { text: '代码片段', link: '/FrontEnd/codeSnippet' },
+            ]
+          },
+          { text: '浏览器相关知识', link: '/FrontEnd/browser' }
         ]
       },
       {
@@ -121,7 +125,9 @@ export default defineConfig({
       {
         text: '宝藏网站',
         items: [
-          { text: '格式转换', link: 'https://cn.office-converter.com/png-to-ico' }
+          { text: '格式转换', link: 'https://cn.office-converter.com/png-to-ico' },
+          { text: '在线图片压缩', link: 'https://tinypng.com/' },
+          { text: '前端API兼容查询', link: 'https://caniuse.com/' }
         ]
       },
       { text: '关于作者', link: '/about' }
