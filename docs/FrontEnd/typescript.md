@@ -77,8 +77,76 @@ const userThree: typeUser = {name: 'hello world', age: 20}
 function showMessage(message: any) {
     return message
 }
+// 函数类型
+function abc(message: string): number {
+    return 123
+}
+const def:(age: number) => number = (age: number) => {
+    return 30
+}
 
+// 接口类型 interface
+interface Student {
+    age: number;
+    sex?: string;
+}
+const student: Student = {age: 18, sex: 'male'}
+
+interface OldStudent extends Student {
+    name: string
+}
+const  oldStudent: OldStudent = {age: 18, sex:'male', name: 'hello'}
+
+// 交叉类型
+type User = {name: string, age: number}
+type Employee = User & {salary: number}
+const employee: Employee = {name: 'hello', age: 30, salary: 1}
+
+// 断言
+const dom: undefined = document.getElementById('#root') as undefined
+const dom1: undefined = <undefined>document.getElementById('#root')
+const testString: String = 123 as any as string
+
+// 字面量类型
+const str: 'ast' = 'ast'
+
+function getPosition(position: 'right' | 'left'): string {
+    return position
+}
+
+// null undefined
+const testNull: null = null
+const testUndefined: undefined = undefined
+
+function checkNull(abc: string | null) {
+    console.log(abc.toUpperCase())
+}
+
+// void
+function getNumber():void {}
 ```
 
 
+
+### 类型注解与类型推断
+
+- 类型注解
+
+  人为告知TS告知变量或者对象的明确属性类型
+```typescript
+const userName: string = 'eugenio'
+```
+
+- 类型推断
+  
+  如果类型推断能自动推断出类型，就没必要去手写类型注解
+
+```typescript
+const userAge = 30
+
+function getTotal(x: number, y:number) {
+    return x + y
+}
+
+```
 
