@@ -84,6 +84,10 @@ export default defineConfig({
       copyright:
         'Copyright © 2023 | <a target="_blank" href="https://github.com/EugenioCode/Eugeniocode"> 星が隠れ </a>'
     },
+    outline: {
+      level: [2, 6],
+      label: '目录'
+    },
     logo: '/logo.png',
     // editLink: {
     //   pattern:

@@ -2,7 +2,7 @@
 title: Typescript
 date: 2022-04-08
 sidebar: false
-outline: [2, 3]
+outline: [1, 4]
 tag:
  - Node
  - Typescript
@@ -46,46 +46,74 @@ npm install -g ts-node
 
 ## 二、Typescript语法基础
 
-### 基础类型
-```typescript
+### 原始类型
+
+#### Boolean 布尔类型
+
+布尔类型就是简单的 `true / false` 值
+```ts
+const isMale: boolean = true
+```
+#### String 字符串类型
+```ts
 // 基础类型
 const myName: string = 'hello'
+```
+#### number 数字类型
+```ts
 const age: number = 30
-const isMale: boolean = true
-// 数组类型
+```
+
+#### 数组类型
+  通过**类型** + **方括号**定义数组类型：
+```ts
 const numberArr:number[] = [1, 3, 5]
 const stringArr: string[] = ['1', '2']
-const BooleanArr: Array<boolean> = [true, false]
 
-// 对象类型
+```
+通过**泛型**定义数组类型：
+```ts
+const BooleanArr: Array<boolean> = [true, false]
+```
+
+#### 对象类型
+```ts
 const user: {name: string, age: number} = {name: 'eugenio', age: 30}
 const userOne: {name: string, age?: number} = {name: 'eugenio'}
+```
 
-// 联合类型
+#### 联合类型
+```ts
 function union(id: string | number) {
     if(typeof id === 'string') {
         console.log(id.toUpperCase())
     }
 }
-
+```
+#### 类型别名
+```ts
 // 类型别名
 type typeUser = {name: string, age: number}
 const userTwo: typeUser = {name: 'hello', age: 30}
 const userThree: typeUser = {name: 'hello world', age: 20}
-
-// any类型
+```
+#### any 类型
+```ts
 function showMessage(message: any) {
     return message
 }
-// 函数类型
+```
+#### 函数类型
+```ts
 function abc(message: string): number {
     return 123
 }
 const def:(age: number) => number = (age: number) => {
     return 30
 }
-
-// 接口类型 interface
+```
+#### 接口类型 interface
+```ts
 interface Student {
     age: number;
     sex?: string;
@@ -96,50 +124,50 @@ interface OldStudent extends Student {
     name: string
 }
 const  oldStudent: OldStudent = {age: 18, sex:'male', name: 'hello'}
-
-// 交叉类型
+```
+#### 交叉类型
+```ts
 type User = {name: string, age: number}
 type Employee = User & {salary: number}
 const employee: Employee = {name: 'hello', age: 30, salary: 1}
-
-// 断言
+```
+#### 类型断言
+```ts
 const dom: undefined = document.getElementById('#root') as undefined
 const dom1: undefined = <undefined>document.getElementById('#root')
 const testString: String = 123 as any as string
-
-// 字面量类型
+```
+#### 字面量类型
+```ts
 const str: 'ast' = 'ast'
 
 function getPosition(position: 'right' | 'left'): string {
     return position
 }
-
-// null undefined
+```
+#### null和undefined
+```ts
 const testNull: null = null
 const testUndefined: undefined = undefined
 
 function checkNull(abc: string | null) {
     console.log(abc.toUpperCase())
 }
-
-// void
+```
+#### void类型
+```ts
 function getNumber():void {}
 ```
 
 
 
 ### 类型注解与类型推断
-
-- 类型注解
-
-  人为告知TS告知变量或者对象的明确属性类型
+-  **类型注解**: 显式指定变量的类型
 ```typescript
 const userName: string = 'eugenio'
 ```
 
-- 类型推断
-  
-  如果类型推断能自动推断出类型，就没必要去手写类型注解
+-  **类型推断**: 由 `TypeScript` 根据上下文内容自动推断出变量类型
 
 ```typescript
 const userAge = 30
@@ -147,6 +175,55 @@ const userAge = 30
 function getTotal(x: number, y:number) {
     return x + y
 }
-
 ```
 
+### 类型收窄
+#### typeof 类型收窄
+```ts
+function uppercase(content: string | number) {
+    if(typeof content === 'string') {
+        return content.toUpperCase()
+    }
+    return content;
+}
+```
+#### 真值收窄
+```ts
+function getString(content?: string) {
+    if(typeof content === 'string') {
+        if(content) {
+            return content.toUpperCase()
+        }
+    } 
+}
+```
+#### 相等收窄
+```ts
+function example(x: number | string, y: string | boolean) {
+    if(x === y) {
+        return x.toUpperCase()
+    }
+}
+```
+
+#### In 语法下的类型收窄
+```ts
+type Fish = {swim: () => {}}
+type Bird = {fly: () => {}}
+function test(animal: Fish | Brid) {
+    if('swim' in animal) {
+        return animal.swim()
+    }
+    return animal.fly()
+}
+```
+
+#### Instanceof 语法下的类型收窄
+```ts
+function test1(param: Date | string) {
+    if(param instanceof Date) {
+        return param.getTime()
+    }
+    return param.toUpperCase()
+}
+```
