@@ -112,6 +112,38 @@ const def:(age: number) => number = (age: number) => {
     return 30
 }
 ```
+***
+> 复杂函数类型补充
+
+- 有属性的函数类型定义方法
+```ts
+interface FunctionWithAttributes {
+    attr: string;
+    (): void
+}
+const test3: FunctionWithAttributes = (str: string) => {
+    console.log(str)
+}
+test3.attr = 'attributes'
+```
+- 构造函数的类型如何定义
+```ts
+interface ClassWithConstructor {
+    new (str: string):void
+}
+function testOne(outerClass: ClassWithConstructor) {
+    const instance = new outerClass('new')
+}
+
+class TestOne {
+    name: string
+    constructor(str: string) {
+        this.name = str
+    }
+}
+testOne(TestOne)
+```
+***
 #### 接口类型 interface
 ```ts
 interface Student {
