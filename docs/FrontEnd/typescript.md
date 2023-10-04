@@ -81,6 +81,24 @@ const BooleanArr: Array<boolean> = [true, false]
 const user: {name: string, age: number} = {name: 'eugenio', age: 30}
 const userOne: {name: string, age?: number} = {name: 'eugenio'}
 ```
+***
+> 对象类型补充
+
+- `interface`中的`readonly`属性
+```ts
+interface Person {
+    readonly name: string;
+    readonly age: number;
+}
+const hello: Person = {
+    name: 'eugenio',
+    age: 30
+}
+```
+- 给对象拓展属性
+
+***
+
 
 #### 联合类型
 ```ts
@@ -113,7 +131,7 @@ const def:(age: number) => number = (age: number) => {
 }
 ```
 ***
-> 复杂函数类型补充
+> 函数类型补充
 
 - 有属性的函数类型定义方法
 ```ts
@@ -143,6 +161,16 @@ class TestOne {
 }
 testOne(TestOne)
 ```
+- 函数与泛型
+```ts
+function getArrayFirstItem<T>(array: T[]):T {
+    return arr[0]
+}
+const numberResult = getArrayFirstItem([1,2,3])
+const stringResult = getArrayFirstItem(['1','2','3'])
+```
+- 函数重载
+
 ***
 #### 接口类型 interface
 ```ts
