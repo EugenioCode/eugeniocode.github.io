@@ -116,7 +116,16 @@ export default defineConfig({
               { text: '代码片段', link: '/FrontEnd/codeSnippet' },
             ]
           },
-          { text: '浏览器相关知识', link: '/FrontEnd/browser' }
+          {
+            text: '', items: [
+              { text: '浏览器', link: '/FrontEnd/browser' }
+            ]
+          },
+          {
+            text: '', items: [
+              { text: '调试', link: '/FrontEnd/devTools' }
+            ]
+          },   
         ]
       },
       {

@@ -1,5 +1,5 @@
 ---
-title: 浏览器相关知识
+title: 浏览器相关
 date: 2023-08-24
 sidebar: false
 tag:
