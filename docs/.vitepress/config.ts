@@ -97,16 +97,16 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '前端物语', items: [
+        text: '代码物语', items: [
           {
-            text: '', items: [
+            text: '前端', items: [
               { text: 'Html', link: '/FrontEnd/html' },
-              { text: 'Typescript', link: '/FrontEnd/typescript' },
+              { text: 'Typescript基础知识', link: '/FrontEnd/typescript/base' },
               { text: 'Vue', link: '/FrontEnd/vue' },
             ]
           },
           {
-            text: '',
+            text: '数据库',
             items: [
               { text: 'Mysql入门', link: '/FrontEnd/mysql' },
             ]
