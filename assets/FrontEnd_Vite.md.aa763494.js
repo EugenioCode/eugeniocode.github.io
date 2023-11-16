@@ -1,0 +1,1 @@
+import{_ as t,v as e,b as a}from"./chunks/framework.d048a433.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"FrontEnd/Vite.md","filePath":"FrontEnd/Vite.md","lastUpdated":1700133598000}'),r={name:"FrontEnd/Vite.md"};function n(s,o,d,i,c,p){return e(),a("div")}const m=t(r,[["render",n]]);export{f as __pageData,m as default};
