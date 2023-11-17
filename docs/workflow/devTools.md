@@ -6,7 +6,7 @@ tag:
  - 调试
 category:
  - 前端
- - 工具
+ - workflow
 ---
 
 # 前端调试技巧

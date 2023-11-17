@@ -7,7 +7,7 @@ sticky: 1
 tag:
  - Git
 category:
- - 工具
+ - workflow
 ---
 
 <!-- more -->

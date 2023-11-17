@@ -97,42 +97,42 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '代码物语', items: [
+        text: '前端', items: [
           {
-            text: '前端', items: [
+            text: '', items: [
               { text: 'Html', link: '/FrontEnd/html' },
               { text: 'Typescript基础知识', link: '/FrontEnd/typescript/base' },
               { text: 'Vue', link: '/FrontEnd/vue' },
             ]
           },
           {
-            text: '数据库',
-            items: [
-              { text: 'Mysql入门', link: '/FrontEnd/mysql' },
-            ]
-          },
-          {
             text: '', items: [
-              { text: '代码片段', link: '/FrontEnd/codeSnippet' },
+              {text: 'Vite入门', link: '/FrontEnd/Vite'}
             ]
-          },
-          {
-            text: '', items: [
-              { text: '浏览器', link: '/FrontEnd/browser' }
-            ]
-          },
-          {
-            text: '', items: [
-              { text: '调试', link: '/FrontEnd/devTools' }
-            ]
-          },   
+          }
+        ]
+      },
+      {
+        text: '工作流', items: [
+          { text: '代码片段', link: '/workflow/codeSnippet' },
+          { text: '开发调试', link: '/workflow/devTools' },
+          { text: 'Npm', link: '/workflow/npm' },
+          { text: 'Git', link: '/workflow/git' }
         ]
       },
       {
         text: '工具', items: [
-          { text: 'Git', link: '/tools/git' },
-          { text: 'Mac软件', link: '/tools/mac' },
-          { text: 'Npm', link: '/tools/npm' },
+          { text: 'Mac软件', link: '/tools/mac' }
+        ]
+      },
+      {
+        text: '扩展提升', items: [
+          {
+            text: '',
+            items: [
+              { text: 'Mysql入门', link: '/database/mysql' },
+            ]
+          },
         ]
       },
       {
@@ -143,7 +143,7 @@ export default defineConfig({
           { text: '前端API兼容查询', link: 'https://caniuse.com/' }
         ]
       },
-      { text: '关于作者', link: '/about' }
+      // { text: '关于作者', link: '/about' }
     ],
     socialLinks: [
       {

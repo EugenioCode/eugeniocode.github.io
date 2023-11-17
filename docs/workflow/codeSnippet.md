@@ -5,10 +5,10 @@ sidebar: false
 tag:
  - 代码片段
 category:
- - 前端
+ - workflow
 ---
 
-# 代码片段
+# 常用代码片段
 
 ## 环境判断
 
@@ -38,4 +38,23 @@ const isWeChat = /micromessenger/.test(UA)
 
 // 移动端
 const isMobile = 'ontouchstart' in window
+```
+
+## 在用户离开页面时可靠地发送 HTTP 请求
+
+- fetch 提供了 keepalive 参数
+
+```javascript
+document.getElementById('link').addEventListener('click', (e) => {
+  fetch("/log", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }, 
+    body: JSON.stringify({
+      name: 'FedJavaScript'
+    }),
+    keepalive: true
+  });
+});
 ```
