@@ -17,7 +17,6 @@ export default defineConfig<ThemeConfig>({
         }
     },
     title: '星が隠れ',
-    base: '/docs',
     head,
     description: 'github开源作品，开源小程序作品，vueJS项目作品，vue3+ts+vite构建项目教学',
     ignoreDeadLinks: true,
