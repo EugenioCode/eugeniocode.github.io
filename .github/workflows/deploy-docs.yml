@@ -5,7 +5,7 @@ name: Blog部署
 on:
   push:
     branches:
-      - blog-v2
+      - main
 
 # 任务
 jobs:
