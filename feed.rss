@@ -4,7 +4,7 @@
         <title>星が隠れ</title>
         <link>https://github.com/EugenioCode</link>
         <description>前端技术分享博客</description>
-        <lastBuildDate>Mon, 18 Mar 2024 11:13:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 26 Mar 2024 09:47:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -15,9 +15,37 @@
         </image>
         <copyright>Copyright © 2023-2024 星が隠れ</copyright>
         <item>
+            <title><![CDATA[【Nest.js】配置]]></title>
+            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-config.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-config.html</guid>
+            <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
+        </item>
+        <item>
+            <title><![CDATA[【Nest.js】数据库]]></title>
+            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-database.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-database.html</guid>
+            <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
+        </item>
+        <item>
+            <title><![CDATA[【Nest.js】日志收集]]></title>
+            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-log.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-log.html</guid>
+            <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
+        </item>
+        <item>
+            <title><![CDATA[【Nest.js】编程思想]]></title>
+            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-codingIdeas.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-codingIdeas.html</guid>
+            <pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate>
+            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
+        </item>
+        <item>
             <title><![CDATA[一文聊通扫码登录]]></title>
-            <link>https://github.com/EugenioCode/posts/2024/03/qrCode.html</link>
-            <guid>https://github.com/EugenioCode/posts/2024/03/qrCode.html</guid>
+            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-qrCode.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-qrCode.html</guid>
             <pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate>
             <enclosure url="https://oss.bytespace.site/uPic/u=3904592825,1598266496&fm=253&fmt=auto&app=138&f=JPEG.webp" length="0" type="image/webp"/>
         </item>
