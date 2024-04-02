@@ -4,7 +4,7 @@
         <title>星が隠れ</title>
         <link>https://github.com/EugenioCode</link>
         <description>前端技术分享博客</description>
-        <lastBuildDate>Tue, 26 Mar 2024 09:47:32 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Apr 2024 09:45:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -16,9 +16,9 @@
         <copyright>Copyright © 2023-2024 星が隠れ</copyright>
         <item>
             <title><![CDATA[【Nest.js】配置]]></title>
-            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-config.html</link>
-            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-config.html</guid>
-            <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
+            <link>https://github.com/EugenioCode/posts/2024/04/nestjs-config.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/04/nestjs-config.html</guid>
+            <pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate>
             <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
         </item>
         <item>
