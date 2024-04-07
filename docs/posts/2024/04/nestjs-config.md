@@ -71,3 +71,58 @@ cover: 'https://oss.bytespace.site/uPic/nestjs.webp'
 1. 依赖性： 使用 config 包意味着你的项目会依赖于这个包，如果这个包有更新或者出现了问题，可能会影响到你的项目。
 2. 可能引入复杂性： 对于小型项目来说，config 包可能会引入不必要的复杂性，因为它提供了许多高级功能，而这些功能对于简单的项目来说可能并不需要。
 3. 配置文件增加维护成本： 尽管将配置信息集中存储在一个地方可以简化配置管理，但也会增加维护配置文件的成本，特别是在项目规模增大或者配置文件格式复杂的情况下。
+
+## Nestjs推荐`@nestjs/config`
+
+### 最简单的用法
+
+安装`@nest/config`
+
+```shell
+npm install @nest/config --save
+```
+
+配置`src/app.module.ts`
+
+```ts
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+  controllers: [AppController],
+  providers: [AppService]
+})
+export class AppModule {}
+```
+创建`.env`文件
+
+```.env
+DATABASE_USER=test
+DATABASE_PASSWORD=test123
+```
+在`src/app.controller.ts`中使用
+```ts
+import { Controller, Get } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { AppService } from './app.service';
+
+@Controller()
+export class AppController {
+  constructor(
+    private readonly appService: AppService,
+    private configService: ConfigService,
+  ) {}
+
+  @Get()
+  getHello(): string {
+    const dbUser = this.configService.get<string>('DATABASE_USER');
+    console.log(dbUser);
+    return this.appService.getHello();
+  }
+}
+```
+
+
