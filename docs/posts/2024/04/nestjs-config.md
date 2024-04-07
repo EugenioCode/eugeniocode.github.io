@@ -125,4 +125,106 @@ export class AppController {
 }
 ```
 
+### 进阶用法
+![img](https://static.www.toimc.com/blog/picgo/2022/10/21/200-84b8b3.webp)
+`ConfigModuleOptions`支持的参数如下：
+```ts
+export interface ConfigModuleOptions {
+    cache?: boolean;
+    isGlobal?: boolean;
+    ignoreEnvFile?: boolean;
+    ignoreEnvVars?: boolean;
+    envFilePath?: string | string[];
+    encoding?: string;
+    validate?: (config: Record<string, any>) => Record<string, any>;
+    validationSchema?: any;
+    validationOptions?: Record<string, any>;
+    load?: Array<ConfigFactory>;
+    expandVariables?: boolean;
+}
+```
+#### 区分不同的环境
 
+
+利用`envFilePath`配合`NODE_ENV`来配置不同启动命令使用不同的配置
+
+```bash
+npm i cross-env
+```
+添加两个文件`.env.development`和`.env.production`
+```bash
+DB=mysql-dev
+DB_HOST=127.0.0.1
+```
+```bash
+DB=mysql-prod
+DB_HOST=127.0.0.1
+```
+修改`package.json`中的启动命令
+```bash
+"start:dev": "cross-env NODE_ENV=development nest start --watch",
+```
+```bash
+"start:prod": "cross-env NODE_ENV=production node dist/main",
+```
+在`app.module.ts`中设置环境变量，默认是`development`：
+```ts
+const envPath = `.env.${process.env.NODE_ENV || 'development'}`;
+console.log('🚀 ~ file: app.module.ts ~ envPath', envPath);
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: envPath,
+    }),
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+```
+
+#### 读取公共配置
+
+如果需要读取公共的`.env`文件，则需要使用到`ConfigModule.forRoot`的`load`方法
+
+安装`pnpm i dotenv`依赖
+
+修改`app.module.ts`
+  ```ts
+  import { Module } from '@nestjs/common';
+  import { UserModule } from './user/user.module';
+  import { ConfigModule } from '@nestjs/config';
+  import * as dotenv from 'dotenv';
+  
+  const envFilePath = `.env.${process.env.NODE_ENV || `development`}`;
+  
+  @Module({
+    imports: [
+      ConfigModule.forRoot({
+        isGlobal: true,
+        envFilePath,
+        // 这里新增.env的文件解析
+        load: [() => dotenv.config({ path: '.env' })],
+      }),
+      UserModule,
+    ],
+    controllers: [],
+    providers: [],
+  })
+  export class AppModule {}
+  ```
+  配置`.env`文件
+  ```bash
+  DB=mysql
+  DB_HOST=127.0.0.1
+  DB_URL=www.imooc.com
+  ```
+  设置测试：
+
+  ```ts
+  const url = this.configService.get('DB_URL');
+  console.log(
+    '🚀 ~ file: user.controller.ts ~ url',
+    url,
+  );
+  ```
