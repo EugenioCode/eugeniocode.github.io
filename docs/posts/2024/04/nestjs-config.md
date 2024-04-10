@@ -76,54 +76,55 @@ cover: 'https://oss.bytespace.site/uPic/nestjs.webp'
 
 ### 最简单的用法
 
-安装`@nest/config`
+- 安装`@nest/config`
 
-```shell
-npm install @nest/config --save
-```
+  ```shell
+  npm install @nest/config --save
+  ```
 
-配置`src/app.module.ts`
+- 配置`src/app.module.ts`
 
-```ts
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
+  ````ts
+  import { Module } from '@nestjs/common';
+  import { AppController } from './app.controller';
+  import { AppService } from './app.service';
+  import { ConfigModule } from '@nestjs/config';
 
-@Module({
-  imports: [ConfigModule.forRoot()],
-  controllers: [AppController],
-  providers: [AppService]
-})
-export class AppModule {}
-```
-创建`.env`文件
+  @Module({
+    imports: [ConfigModule.forRoot()],
+    controllers: [AppController],
+    providers: [AppService]
+  })
+  export class AppModule {}
+  ````
+- 创建`.env`文件
 
-```.env
-DATABASE_USER=test
-DATABASE_PASSWORD=test123
-```
-在`src/app.controller.ts`中使用
-```ts
-import { Controller, Get } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { AppService } from './app.service';
+  ```.env
+  DATABASE_USER=test
+  DATABASE_PASSWORD=test123
+  ```
+- 在`src/app.controller.ts`中使用
 
-@Controller()
-export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private configService: ConfigService,
-  ) {}
+  ```ts
+  import { Controller, Get } from '@nestjs/common';
+  import { ConfigService } from '@nestjs/config';
+  import { AppService } from './app.service';
 
-  @Get()
-  getHello(): string {
-    const dbUser = this.configService.get<string>('DATABASE_USER');
-    console.log(dbUser);
-    return this.appService.getHello();
+  @Controller()
+  export class AppController {
+    constructor(
+      private readonly appService: AppService,
+      private configService: ConfigService,
+    ) {}
+
+    @Get()
+    getHello(): string {
+      const dbUser = this.configService.get<string>('DATABASE_USER');
+      console.log(dbUser);
+      return this.appService.getHello();
+    }
   }
-}
-```
+  ```
 
 ### 进阶用法
 ![img](https://static.www.toimc.com/blog/picgo/2022/10/21/200-84b8b3.webp)
@@ -146,50 +147,50 @@ export interface ConfigModuleOptions {
 #### 区分不同的环境
 
 
-利用`envFilePath`配合`NODE_ENV`来配置不同启动命令使用不同的配置
+- 利用`envFilePath`配合`NODE_ENV`来配置不同启动命令使用不同的配置
 
-```bash
-npm i cross-env
-```
-添加两个文件`.env.development`和`.env.production`
-```bash
-DB=mysql-dev
-DB_HOST=127.0.0.1
-```
-```bash
-DB=mysql-prod
-DB_HOST=127.0.0.1
-```
-修改`package.json`中的启动命令
-```bash
-"start:dev": "cross-env NODE_ENV=development nest start --watch",
-```
-```bash
-"start:prod": "cross-env NODE_ENV=production node dist/main",
-```
-在`app.module.ts`中设置环境变量，默认是`development`：
-```ts
-const envPath = `.env.${process.env.NODE_ENV || 'development'}`;
-console.log('🚀 ~ file: app.module.ts ~ envPath', envPath);
-@Module({
-  imports: [
-    ConfigModule.forRoot({
-      envFilePath: envPath,
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
-```
+  ```bash
+  npm i cross-env
+  ```
+- 添加两个文件`.env.development`和`.env.production`
+  ```bash
+  DB=mysql-dev
+  DB_HOST=127.0.0.1
+  ```
+  ```bash
+  DB=mysql-prod
+  DB_HOST=127.0.0.1
+  ```
+- 修改`package.json`中的启动命令
+  ```bash
+  "start:dev": "cross-env NODE_ENV=development nest start --watch",
+  ```
+  ```bash
+  "start:prod": "cross-env NODE_ENV=production node dist/main",
+  ```
+- 在`app.module.ts`中设置环境变量，默认是`development`：
+  ```ts
+  const envPath = `.env.${process.env.NODE_ENV || 'development'}`;
+  console.log('🚀 ~ file: app.module.ts ~ envPath', envPath);
+  @Module({
+    imports: [
+      ConfigModule.forRoot({
+        envFilePath: envPath,
+      }),
+    ],
+    controllers: [AppController],
+    providers: [AppService],
+  })
+  export class AppModule {}
+  ```
 
 #### 读取公共配置
 
-如果需要读取公共的`.env`文件，则需要使用到`ConfigModule.forRoot`的`load`方法
+>如果需要读取公共的`.env`文件，则需要使用到`ConfigModule.forRoot`的`load`方法
 
-安装`pnpm i dotenv`依赖
+- 安装`pnpm i dotenv`依赖
 
-修改`app.module.ts`
+- 修改`app.module.ts`
   ```ts
   import { Module } from '@nestjs/common';
   import { UserModule } from './user/user.module';
@@ -213,13 +214,13 @@ export class AppModule {}
   })
   export class AppModule {}
   ```
-  配置`.env`文件
+- 配置`.env`文件
   ```bash
   DB=mysql
   DB_HOST=127.0.0.1
   DB_URL=www.imooc.com
   ```
-  设置测试：
+- 设置测试：
 
   ```ts
   const url = this.configService.get('DB_URL');
@@ -228,3 +229,37 @@ export class AppModule {}
     url,
   );
   ```
+#### 公共配置数据校验
+>配置验证，主要是指在应用程序启动时，如果没有提供所需的环境变量或不符合某些验证规则，就会抛出一个异常。
+
+- 安装依赖
+
+  ```shell
+  pnpm install --save joi
+  ```
+- 定义验证Schema
+
+```ts
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath,
+      load: [() => dotenv.config({ path: '.env' })],
+      validationSchema: Joi.object({
+        NODE_ENV: Joi.string()
+          .valid('development', 'production')
+          .default('development'),
+        DB: Joi.string().required(),
+        DB_HOST: Joi.string().required().ip(),
+        DB_URL: Joi.string().domain(),
+      }),
+    }),
+    UserModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+```
+
+
