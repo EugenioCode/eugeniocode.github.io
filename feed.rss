@@ -4,7 +4,7 @@
         <title>星が隠れ</title>
         <link>https://github.com/EugenioCode</link>
         <description>前端技术分享博客</description>
-        <lastBuildDate>Wed, 10 Apr 2024 12:02:51 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Apr 2024 09:55:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
@@ -14,6 +14,38 @@
             <link>https://github.com/EugenioCode</link>
         </image>
         <copyright>Copyright © 2023-2024 星が隠れ</copyright>
+        <item>
+            <title><![CDATA[【Nest.js】日志收集]]></title>
+            <link>https://github.com/EugenioCode/posts/2024/04/nestjs-log.html</link>
+            <guid>https://github.com/EugenioCode/posts/2024/04/nestjs-log.html</guid>
+            <pubDate>Thu, 11 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[<h2 id="log日志简介" tabindex="-1">Log日志简介 <a class="header-anchor" href="#log日志简介" aria-label="Permalink to &quot;Log日志简介&quot;">&ZeroWidthSpace;</a></h2>
+<h3 id="log日志等级" tabindex="-1">Log日志等级 <a class="header-anchor" href="#log日志等级" aria-label="Permalink to &quot;Log日志等级&quot;">&ZeroWidthSpace;</a></h3>
+<ul>
+<li>Log: 通用日志，按需进行记录（打印）</li>
+<li>Warning: 警告日志，比如，尝试多次进行数据库操作</li>
+<li>Error: 严重日志，比如，数据库异常</li>
+<li>Debug: 调试日志，比如，加载数据日志</li>
+<li>Verbose: 详细日志，所有的操作与详细信息（非必要不打印）</li>
+</ul>
+<h3 id="功能分类日志" tabindex="-1">功能分类日志 <a class="header-anchor" href="#功能分类日志" aria-label="Permalink to &quot;功能分类日志&quot;">&ZeroWidthSpace;</a></h3>
+<ul>
+<li>错误日志 -&gt; 方便定位问题，给用户友好提示</li>
+<li>调试日志 -&gt; 方便开发</li>
+<li>请求日志 -&gt; 记录敏感行为</li>
+</ul>
+<h3 id="日志记录位置" tabindex="-1">日志记录位置 <a class="header-anchor" href="#日志记录位置" aria-label="Permalink to &quot;日志记录位置&quot;">&ZeroWidthSpace;</a></h3>
+<ul>
+<li>控制台日志 -&gt; 方便监看（调试用）</li>
+<li>文件日志 -&gt; 方便回溯与追踪（24小时滚动）</li>
+<li>数据库日志 -&gt; 敏感操作、敏感数据记录</li>
+</ul>
+<h3 id="nestjs中记录日志" tabindex="-1">NestJS中记录日志 <a class="header-anchor" href="#nestjs中记录日志" aria-label="Permalink to &quot;NestJS中记录日志&quot;">&ZeroWidthSpace;</a></h3>
+<p>|      | Log     | Error    | Warning | Debug  | Verbose | API     |
+|</p>
+]]></description>
+            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
+        </item>
         <item>
             <title><![CDATA[【Nest.js】配置]]></title>
             <link>https://github.com/EugenioCode/posts/2024/04/nestjs-config.html</link>
@@ -25,13 +57,6 @@
             <title><![CDATA[【Nest.js】数据库]]></title>
             <link>https://github.com/EugenioCode/posts/2024/03/nestjs-database.html</link>
             <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-database.html</guid>
-            <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
-            <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
-        </item>
-        <item>
-            <title><![CDATA[【Nest.js】日志收集]]></title>
-            <link>https://github.com/EugenioCode/posts/2024/03/nestjs-log.html</link>
-            <guid>https://github.com/EugenioCode/posts/2024/03/nestjs-log.html</guid>
             <pubDate>Tue, 26 Mar 2024 00:00:00 GMT</pubDate>
             <enclosure url="https://oss.bytespace.site/uPic/nestjs.webp" length="0" type="image/webp"/>
         </item>
