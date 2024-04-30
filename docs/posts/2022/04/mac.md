@@ -1,4 +1,5 @@
 ---
+post: true
 title: Mac软件推荐
 date: 2022-04-05
 sidebar: false

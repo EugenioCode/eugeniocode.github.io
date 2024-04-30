@@ -1,4 +1,5 @@
 ---
+post: true
 title: 常用代码片段
 date: 2023-08-24
 sidebar: false

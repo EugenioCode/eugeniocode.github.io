@@ -1,4 +1,5 @@
 ---
+post: true
 title: 【Nest.js】配置
 date: 2024-04-01
 sidebar: true

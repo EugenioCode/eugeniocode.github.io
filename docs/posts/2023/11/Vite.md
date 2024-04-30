@@ -1,4 +1,5 @@
 ---
+post: true
 title: Vite入门
 date: 2023-11-17
 sidebar: false

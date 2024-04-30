@@ -1,4 +1,5 @@
 ---
+post: true
 title: HTML、JS、CSS 整理与采坑记录
 date: 2022-03-16
 sidebar: false

@@ -1,4 +1,5 @@
 ---
+post: true
 title: 一文聊通扫码登录
 date: 2024-03-13
 sidebar: true

@@ -1,4 +1,5 @@
 ---
+post: true
 title: 前端调试
 date: 2023-08-24
 sidebar: false

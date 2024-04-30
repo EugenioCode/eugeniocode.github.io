@@ -1,4 +1,5 @@
 ---
+post: true
 title: 【Nest.js】日志收集
 date: 2024-04-11
 sidebar: true
@@ -11,6 +12,8 @@ categories:
 cover: 'https://oss.bytespace.site/uPic/nestjs.webp'
 
 ---
+
+
 ## Log日志简介
 
 ### Log日志等级

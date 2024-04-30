@@ -1,4 +1,5 @@
 ---
+post: true
 title: 【Nest.js】数据库
 date: 2024-03-26
 sidebar: true

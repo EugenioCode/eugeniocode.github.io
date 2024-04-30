@@ -1,4 +1,5 @@
 ---
+post: true
 title: NPM
 date: 2022-03-21
 sidebar: false

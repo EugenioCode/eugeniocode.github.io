@@ -1,4 +1,5 @@
 ---
+post: true
 title: Mysql入门
 date: 2022-03-18
 sidebar: false
